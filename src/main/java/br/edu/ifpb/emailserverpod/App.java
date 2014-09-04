@@ -16,14 +16,6 @@ public class App {
         registry.bind("Fachada", new FachadaImpl());
         
         FachadaImpl impl = new FachadaImpl();
-//        Email email = new Email();
-//        EmailDAO emailDAO = new EmailDAO();
-//        email.setAssunto("teste4");
-//        email.setDestinatarios("filipegermano89@gmail.com");
-//        email.setRemetente("Filipe Teste");
-//        email.setMensagem("testando o email carai");
-        
-//        emailDAO.salvar(email);
         
         impl.agendadorEmail();
         

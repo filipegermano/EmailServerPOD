@@ -18,13 +18,16 @@ public class Agendador extends TimerTask {
         GerenciaEmail gerenciaEmail = new GerenciaEmail();
         EmailDAO emailDAO = new EmailDAO();
         List<Email> emails = emailDAO.emailsNaoEnviados();
+        Testes teste = new Testes();
 
         if (emails != null) {
             for (Email email1 : emails) {
                 try {
-                    String enviado = gerenciaEmail.enviaEmail(email1);
-                    if (enviado == "ok") {
-                        emailDAO.setStatus(email1);
+                    if (teste.testaNet()) {
+                        String enviado = gerenciaEmail.enviaEmail(email1);
+                        if (enviado == "ok") {
+                            emailDAO.setStatus(email1);
+                        }
                     }
                 } catch (RemoteException ex) {
                     Logger.getLogger(Agendador.class.getName()).log(Level.SEVERE, null, ex);

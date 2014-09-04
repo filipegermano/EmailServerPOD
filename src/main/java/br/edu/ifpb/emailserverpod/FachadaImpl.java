@@ -47,7 +47,6 @@ public class FachadaImpl extends UnicastRemoteObject implements Fachada {
     @Override
     public Long latencia(byte[] array) throws RemoteException {
         long tempo1 = System.currentTimeMillis();
-        System.out.println(array);
         try {
             Thread.sleep(50);
         } catch (InterruptedException ex) {
